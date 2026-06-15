@@ -13,3 +13,11 @@ datasource db {
   url       = env("DATABASE_URL")
   directUrl = env("DIRECT_URL")
 }
+
+model users {
+  id            String   @id
+  name          String
+  email         String   @unique
+  profilePicUrl String
+  createdAt     DateTime @default(now())
+}
